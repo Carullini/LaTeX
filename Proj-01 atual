@@ -1,0 +1,88 @@
+\documentclass [a4paper, 12pt]{article} % define o documento como artigo de papel tamanho A4 e tamanho de fonte 12
+
+\usepackage[utf8]{inputenc} % permite o uso de acentuação
+
+\usepackage[brazil]{babel} % deixa o documento em pt-br
+
+\usepackage[T1]{fontenc} % para copiar e colar de outras fontes sem maiores problemas
+
+\usepackage{amsmath, amsthm, amsfonts, amssymb, dsfont, mathtools} % pacotes matemáticos
+
+\usepackage[table, xcdraw]{graphicx, xcolor, multirow, multicol} % para trabalhar com imagens e tabelas
+\usepackage{indentfirst} % faz com que todos os parágrafos sejam devidamente identados
+\usepackage{mathptmx} % texto em fonte Times New Roman
+\usepackage[alf, abnt-emphasize=bf, recuo=0cm, abnt-etal-cite=2, abnt-etal-list=0, abnt-etal-text=it]{abntex2cite} % citações no formato ABNT
+\usepackage{float} % permite manipular posicionamento de figuras e tabelas
+\usepackage{lipsum} % gerar texto aleatorio 
+\title{Projeto01}
+\author{Carollini De lima}
+\date{March 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+``psicologia é a chave do conhecimento''\cite{bock2019psicologia}
+Segundo \citeonline{bock2019psicologia} a psicologia nos ajuda a entender as complexidades. 
+
+\section{figuras em LaTeX}
+
+\label {sec:figureslatex}
+\lipsum[1]
+\begin{figure} [H]
+    \centering
+     \caption{Montanha com gelo}
+    \includegraphics [scale=0.5]{montanhas.jpg} \\
+    \legend{Fonte: Elaborada pelo autor} \cite{bock2019psicologia}
+    \label{fig:figure}
+\end{figure}
+
+
+\subsection{Figuras lado a lado}
+
+\begin{figure}
+    \centering
+    \begin{minipage}[!]{0.4\linewidth}
+    \caption{Montanhas 1}
+    \includegraphics[width=1]\linewidth{montanhas.jpg}\\
+    \label{fig:Montanhas 1}
+    \legend{Fonte: Elaborada pelo autor}
+    \end{minipage}
+        \begin{minipage}[!]{0.4\linewidth}
+    \caption{Montanhas 2}
+    \includegraphics[width=1]\linewidth{montanhas.jpg}\\
+    \label{fig:Montanhas 2}
+    \legend{Fonte: Elaborada pelo autor}
+    \end{minipage}
+\end{figure}
+
+As figuras\ref{fig:Montanhas 1} e \ref{fig:Montanhas 2} apresentam montanhas cheias de gelo.
+
+A Figura \ref{fig:figure} apresenta uma montanha repleta de gelo.
+\lipsum[1]
+
+\section{Tabelas em LaTeX} 
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+\caption{Tabelas de Datas}
+\label{tab:tabela1}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lll}
+\hline
+\multicolumn{3}{c}{Datas}                                              \\ \hline
+\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{16/03} & Hoje             \\ \hline
+\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{17/03} & Amanhã           \\ \hline
+\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{18/03} & Depois de Amanhã \\ \hline
+\end{tabular}%
+}
+\end{table} 
+A tabela \ref{tab:tabela1} possui as datas  importantes.
+ \section{Notas de rodapé}Edital nº 58, de 22 de agosto de 2023\footnote{Disponível em:\url{https://www.in.gov.br/web/dou/-/edital-n-58-de-22-de-agosto-de-202505043772}.}Acesso em: Março de 2024.
+
+
+
+\newpage
+\bibliography{referencias}
+\end{document}
